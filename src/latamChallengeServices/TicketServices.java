@@ -16,6 +16,12 @@ import latamChallengeEntities.Ticket;
  */
 public class TicketServices {
     
+    public void checkAge(Event e, Customer c){
+        
+        
+        
+    }
+    
     public void printTicket(Ticket t){
         System.out.println("*****************************************************");
         System.out.println(t.getE().getEventName().toUpperCase());
