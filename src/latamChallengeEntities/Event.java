@@ -30,15 +30,75 @@ public class Event {
     private String gift;
     private int amount;
     private boolean available;
-    public LocalDate getEvDate() {
-        return evDate;
-    }
-
-    public void setEvDate(LocalDate evDate) {
-        this.evDate = evDate;
-    }
     private LocalDate evDate;
     
+    public Event() {
+    }
+
+    // constructor with Basic Information to stard
+
+    public Event(String eventName, int minAge, int amount, LocalDate evDate) {
+        this.eventName = eventName;
+        this.minAge = minAge;
+        this.amount = amount;
+        this.evDate = evDate;
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
+    public String getEventCode() {
+        return eventCode;
+    }
+
+    public void setEventCode(String eventCode) {
+        this.eventCode = eventCode;
+    }
+
+    public int getMinAge() {
+        return minAge;
+    }
+
+    public void setMinAge(int minAge) {
+        this.minAge = minAge;
+    }
+
+    public String[] getListRegTickets() {
+        return listRegTickets;
+    }
+
+    public void setListRegTickets(String[] listRegTickets) {
+        this.listRegTickets = listRegTickets;
+    }
+
+    public String[] getListVIPtikcets() {
+        return listVIPtikcets;
+    }
+
+    public void setListVIPtikcets(String[] listVIPtikcets) {
+        this.listVIPtikcets = listVIPtikcets;
+    }
+
+    public String getGift() {
+        return gift;
+    }
+
+    public void setGift(String gift) {
+        this.gift = gift;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 
     public boolean isAvailable() {
         return available;
@@ -48,73 +108,22 @@ public class Event {
         this.available = available;
     }
 
-    public Event() {
+    public LocalDate getEvDate() {
+        return evDate;
     }
 
-    // constructor with Basic Information to stard
-    public Event(String eventName, int minAge, int amount) {
-        this.eventName = eventName;
-        this.minAge = minAge;
-        this.amount = amount;
+    public void setEvDate(LocalDate evDate) {
+        this.evDate = evDate;
     }
 
-    public String getEventName() {
-        return eventName;
+    @Override
+    public String toString() {
+        return "Event{" + "eventName=" + eventName + ", eventCode=" + eventCode + ", minAge=" + minAge + ", listRegTickets=" + listRegTickets + ", listVIPtikcets=" + listVIPtikcets + ", gift=" + gift + ", amount=" + amount + ", available=" + available + ", evDate=" + evDate + '}';
     }
-
-    public String getEventCode() {
-        return eventCode;
-    }
-
-    public int getMinAge() {
-        return minAge;
-    }
-
-    public String[] getListRegTickets() {
-        return listRegTickets;
-    }
-
-    public String[] getListVIPtikcets() {
-        return listVIPtikcets;
-    }
-
-    public String getGift() {
-        return gift;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setEventName(String eventName) {
-        this.eventName = eventName;
-    }
-
-    public void setEventCode(String eventCode) {
-        this.eventCode = eventCode;
-    }
-
-    public void setMinAge(int minAge) {
-        this.minAge = minAge;
-    }
-
-    public void setListRegTickets(String[] listRegTickets) {
-        this.listRegTickets = listRegTickets;
-    }
-
-    public void setListVIPtikcets(String[] listVIPtikcets) {
-        this.listVIPtikcets = listVIPtikcets;
-    }
-
-    public void setGift(String gift) {
-        this.gift = gift;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
-   
     
     
-}
+    
+    
+    
+    }
+

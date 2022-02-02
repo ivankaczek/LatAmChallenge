@@ -6,6 +6,7 @@
 package latamticketchallenge;
 
 import java.time.LocalDate;
+import java.time.Month;
 import latamChallengeEntities.Customer;
 import latamChallengeEntities.Event;
 import latamChallengeEntities.EventDataBase;
@@ -95,38 +96,42 @@ Mantener la cantidad de entradas vendidas por los vendedores */
         
 SalesServices slSvc = new SalesServices();
 TicketServices tk = new TicketServices();
-EventServices evSvc = new EventServices();
+EventServices evSvc = new EventServices();      // take a look at the "empty" constructor which also instantiates an ArrayList 
+                                                // to store de codes of the events
 EventDataBase dB = new EventDataBase();         // OPTION 1: I don't know how to handle it yet
 String dataBase[] = new String[10];             // OPTION 2: It is the best at the moment
 
 
         //Event ev01 = evSvc.createEvent();
         //evSvc.eventInfo(ev01);
-Event ev02 = new Event("Andreas Steier Harpsichord Concerto", 0, 500);
-ev02.setEvDate(LocalDate.of(2022, 3, 28));
-dataBase[0]=ev02.getEventName();
+Event ev02 = new Event("Andreas Steier Harpsichord Concerto", 0, 500,LocalDate.of(2022, 3, 28));
+//ev02.setEvDate(LocalDate.of(2022, 3, 28));
+//dataBase[0]=ev02.getEventName();
 dB.setEventDataBase(dataBase);
-evSvc.eventInfo(ev02);
+//evSvc.eventInfo(ev02);
 //System.out.println(" ");
 
-Event ev03 = new Event("Moulin Rouge Cabaret", 18, 200);
-ev03.setEvDate(LocalDate.of(2022, 4, 11));
-dataBase[1]=ev03.getEventName();
+Event ev03 = new Event("Moulin Rouge Cabaret", 18, 200, LocalDate.of(2022, 4, 11));
+//ev03.setEvDate(LocalDate.of(2022, 4, 11));
+//dataBase[1]=ev03.getEventName();
 dB.setEventDataBase(dataBase);
-evSvc.eventInfo(ev03);
+//evSvc.eventInfo(ev03);
 
-Event ev04 = new Event("Marta Argerich Tour", 14, 350);
-ev04.setEvDate(LocalDate.of(2022, 5, 25));
-dataBase[2]=ev04.getEventName();
+Event ev04 = new Event("Marta Argerich Tour", 14, 350, LocalDate.of(2022, 5, 25));
+//ev04.setEvDate(LocalDate.of(2022, 5, 25));
+//dataBase[2]=ev04.getEventName();
 dB.setEventDataBase(dataBase);
-evSvc.eventInfo(ev04);
+//evSvc.eventInfo(ev04);
 
-Event ev05 = new Event("Cirque du Soleil", 0, 400);
-ev05.setEvDate(LocalDate.of(2022, 7, 11));
-dataBase[3] = ev05.getEventName();
+Event ev05 = new Event("Cirque du Soleil", 0, 400, LocalDate.of(2022, 7, 11));
+//ev05.setEvDate(LocalDate.of(2022, 7, 11));
+//dataBase[3] = ev05.getEventName();
 dB.setEventDataBase(dataBase);
-evSvc.eventInfo(ev05);
-        
+//evSvc.eventInfo(ev05);
+
+evSvc.createAndStoreEvent();
+evSvc.createAndStoreEvent();
+evSvc.showEventList();
 // Ivan is now a PERSON
 Person p01 = new Person("Ivan", "Alejandro", "Tkaczek", 31037338, LocalDate.of(1985, 1, 24));
 //System.out.println(p01);
@@ -150,10 +155,10 @@ Customer c01 = new Customer(p02);
 
 // Here we simulate that Ivan sells a Ticket to Wolfi
 Ticket t01=new Ticket(ev05, c01, se01);
-tk.printTicket(t01);
+//tk.printTicket(t01);
 
 
-evSvc.showAvailableEvents(dB);
+//evSvc.showAvailableEvents(dB);
 
 // Wolfi compra una entrada para el concierto de Andreas Steier
 // 1° Wolfi tiene que ser un cliente, 
